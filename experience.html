@@ -1,917 +1,1117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Experience | Celestial Africa Limited</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Base Styles */
-        :root {
-            --primary: #1a365d;
-            --secondary: #d69e2e;
-            --accent: #742a2a;
-            --light: #f8f5e6;
-            --dark: #2d3748;
-            --nav-bg: rgba(26, 54, 93, 0.85);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        
-        .btn:hover {
-            background: #b38221;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* Header & Navigation with Blur Effect */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.4s ease;
-            background: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            z-index: 1001;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .logo-text span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-            position: relative;
-        }
-        
-        .nav-links a {
-            color: white;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 0;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        /* Page Header */
-        .page-header {
-            height: 60vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-        
-        .page-header-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb li {
-            margin: 0 10px;
-        }
-        
-        .breadcrumb li:after {
-            content: '/';
-            margin-left: 10px;
-            color: var(--secondary);
-        }
-        
-        .breadcrumb li:last-child:after {
-            content: '';
-            margin: 0;
-        }
-        
-        .breadcrumb a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: var(--secondary);
-        }
-        
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 30px;
-            position: relative;
-            margin-bottom: 60px;
-            width: 50%;
-        }
-        
-        .timeline-item:nth-child(even) {
-            align-self: flex-end;
-            justify-content: flex-start;
-            padding-left: 30px;
-            padding-right: 0;
-            left: 50%;
-        }
-        
-        .timeline-content {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            width: 100%;
-            max-width: 400px;
-            position: relative;
-        }
-        
-        .timeline-content:after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            right: -10px;
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-left: 10px solid white;
-            border-bottom: 10px solid transparent;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content:after {
-            right: auto;
-            left: -10px;
-            border-left: none;
-            border-right: 10px solid white;
-        }
-        
-        .timeline-icon {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            top: 10px;
-            right: -60px;
-            z-index: 2;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-icon {
-            right: auto;
-            left: -60px;
-        }
-        
-        .timeline-content h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Team Section */
-        .team {
-            background: var(--light);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-img {
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .member-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .team-member:hover .member-img img {
-            transform: scale(1.05);
-        }
-        
-        .member-info {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .member-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .member-role {
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .member-social a {
-            width: 35px;
-            height: 35px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .member-social a:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .faq-question {
-            padding: 20px;
-            background: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            background: white;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-answer.active {
-            max-height: 200px;
-            padding: 20px;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            color: white;
-        }
-        
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 1.2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #cbd5e0;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 0;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-content:after {
-                right: auto;
-                left: -10px;
-                border-left: none;
-                border-right: 10px solid white;
-            }
-            
-            .timeline-icon {
-                left: 20px;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: var(--nav-bg);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.5s ease;
-                z-index: 999;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .page-header h1 {
-                font-size: 2.3rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            .breadcrumb {
-                flex-direction: column;
-            }
-            
-            .breadcrumb li {
-                margin: 5px 0;
-            }
-            
-            .breadcrumb li:after {
-                content: '';
-                margin: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Update Account | EliteFX Return</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0d1b2a;
+      --secondary: #1b263b;
+      --accent: #00bcd4;
+      --success: #00C851;
+      --error: #ff4444;
+      --warning: #ffbb33;
+      --text-light: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --card-bg: #1e293b;
+      --nav-bg: #0f172a;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding-bottom: 80px;
+      transition: var(--transition);
+    }
+
+    .container {
+      padding: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .app-header {
+      background-color: var(--secondary);
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 15px;
+      background: var(--secondary);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: var(--transition);
+    }
+
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.5rem;
+      color: #000;
+      transition: var(--transition);
+    }
+
+    .profile-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .profile-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .update-section {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: var(--transition);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .section-title i {
+      margin-right: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background: #2d3748;
+      border: 1px solid #3c4a5e;
+      border-radius: 8px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+    }
+
+    .form-control.error {
+      border-color: var(--error);
+    }
+
+    .error-message {
+      color: var(--error);
+      font-size: 0.75rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    .btn:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(50, 50);
+        opacity: 0;
+      }
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: #2d3748;
+      color: var(--text-light);
+    }
+
+    .btn-loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .btn-loading:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border: 3px solid transparent;
+      border-top-color: #000;
+      border-radius: 50%;
+      animation: button-loading-spinner 1s ease infinite;
+    }
+
+    @keyframes button-loading-spinner {
+      from { transform: rotate(0turn); }
+      to { transform: rotate(1turn); }
+    }
+
+    .divider {
+      height: 1px;
+      background: #2c3e50;
+      margin: 20px 0;
+    }
+
+    .switch-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .switch-label {
+      font-size: 0.9rem;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #3c4a5e;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--accent);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+
+    .bottom-nav-item {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .bottom-nav-item i {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .bottom-nav-item.active {
+      color: var(--accent);
+    }
+
+    .bottom-nav-item:hover {
+      color: var(--accent);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: black;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 1000;
+      display: none;
+      max-width: 90%;
+      animation: toast-in 0.3s ease, toast-out 0.3s ease 2.7s;
+    }
+
+    .toast.error {
+      background: var(--error);
+      color: white;
+    }
+
+    .toast.success {
+      background: var(--success);
+      color: black;
+    }
+
+    @keyframes toast-in {
+      from { transform: translate(-50%, 100px); opacity: 0; }
+      to { transform: translate(-50%, 0); opacity: 1; }
+    }
+
+    @keyframes toast-out {
+      from { transform: translate(-50%, 0); opacity: 1; }
+      to { transform: translate(-50%, 100px); opacity: 0; }
+    }
+
+    .verification-badge {
+      display: inline-block;
+      background: var(--success);
+      color: #000;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    .pending-badge {
+      display: inline-block;
+      background: var(--warning);
+      color: #000;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    .password-strength {
+      margin-top: 8px;
+      height: 5px;
+      border-radius: 3px;
+      background: #2d3748;
+      overflow: hidden;
+    }
+
+    .password-strength-bar {
+      height: 100%;
+      width: 0;
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+
+    .strength-weak {
+      background: var(--error);
+      width: 33%;
+    }
+
+    .strength-medium {
+      background: var(--warning);
+      width: 66%;
+    }
+
+    .strength-strong {
+      background: var(--success);
+      width: 100%;
+    }
+
+    .password-criteria {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .criteria-met {
+      color: var(--success);
+    }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(13, 27, 42, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--accent);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+      
+      .profile-header {
+        padding: 15px;
+      }
+      
+      .profile-pic {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-text">Celestial <span>Africa</span></div>
-            </div>
-            
-            <div class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="experience.html" class="active">Experience</a></li>
-                <li><a href="#safety">Safety</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="booking.html">Contact</a></li>
-                <li><a href="booking.html" class="btn">Book Now</a></li>
-            </ul>
-        </div>
-    </header>
+  <!-- App Header -->
+  <div class="app-header">
+    <div>Update Account</div>
+    <div class="user-welcome">
+      <i class="fas fa-user-cog"></i>
+    </div>
+  </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container page-header-content">
-            <h1>The Celestial Experience</h1>
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>The Experience</li>
-            </ul>
-        </div>
-    </section>
+  <div class="container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-pic">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="profile-info">
+        <h3 id="userName">Loading...</h3>
+        <p id="userEmail">user@example.com</p>
+      </div>
+    </div>
 
-    <!-- Experience Timeline -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Your Journey With Us</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Sunrise Preparation</h3>
-                        <p>Your adventure begins before dawn. We welcome you with refreshments as you watch the magnificent balloons being inflated. Our expert team provides a comprehensive safety briefing.</p>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Magical Ascent</h3>
-                        <p>As the sun begins to rise, you'll gently lift off the ground. The world becomes quiet except for the occasional burst of the burner. The African landscape unfolds beneath you in a spectacular panorama.</p>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-cloud-sun"></i>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Wildlife Spectacle</h3>
-                        <p>From your unique vantage point, witness wildlife in their natural habitat. Elephants, giraffes, and antelope roam below, often unaware of your silent presence above.</p>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-binoculars"></i>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Champagne Celebration</h3>
-                        <p>After approximately one hour in the air, we land and celebrate your journey with a traditional champagne ceremony. Toast to your adventure as we share stories of the flight.</p>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Gourmet Bush Breakfast</h3>
-                        <p>The experience concludes with a delicious gourmet breakfast prepared in the bush. Enjoy a meal surrounded by nature as you reflect on your incredible journey through the skies.</p>
-                    </div>
-                    <div class="timeline-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Personal Information Section -->
+    <div class="update-section">
+      <div class="section-title">
+        <i class="fas fa-user-edit"></i>
+        <span>Personal Information</span>
+      </div>
+      
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" aria-required="true">
+        <div class="error-message" id="fullNameError">Please enter your full name</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter your phone number">
+        <div class="error-message" id="phoneNumberError">Please enter a valid phone number</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" class="form-control" aria-required="true">
+          <option value="">Select your country</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="CA">Canada</option>
+          <option value="AU">Australia</option>
+          <!-- More countries would be added here -->
+        </select>
+        <div class="error-message" id="countryError">Please select your country</div>
+      </div>
+      
+      <button id="savePersonalInfo" class="btn">Save Changes</button>
+    </div>
 
-    <!-- Team Section -->
-    <section class="section team">
-        <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="sc.jpg" alt="CEO">
-                    </div>
-                    <div class="member-info">
-                        <h3>Charles Ssemakula</h3>
-                        <div class="member-role">Founder & CEO</div>
-                        <p>With love in tourism and a passion for aviation, Charles founded Celestial Africa to bring unforgettable experiences to Uganda's tourism industry.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="ij.jpg" alt="Head Pilot">
-                    </div>
-                    <div class="member-info">
-                        <h3>Joseph Isabirye</h3>
-                        <div class="member-role">Sales Manager</div>
-                        <p>Sarah is our saleman, he coordinates and closes all kinds of deals with our company.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="3.jpg" alt="Operations Manager">
-                    </div>
-                    <div class="member-info">
-                        <h3>Grace Kansiime</h3>
-                        <div class="member-role">Operations Manager</div>
-                        <p>Grace ensures every aspect of your experience runs smoothly. With years in luxury tourism, she coordinates our team to deliver exceptional service.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Security Section -->
+    <div class="update-section">
+      <div class="section-title">
+        <i class="fas fa-shield-alt"></i>
+        <span>Security</span>
+      </div>
+      
+      <div class="form-group">
+        <label>Email Verification</label>
+        <div id="emailVerificationStatus" style="padding: 8px 0;">
+          <span id="emailStatusText">Status: Loading...</span>
+          <span id="verificationBadge" class="pending-badge">Pending</span>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How long is the balloon flight?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The flight itself lasts approximately 1 hour, but the entire experience from preparation to breakfast takes about 3-4 hours.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What should I wear for the flight?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We recommend wearing comfortable, layered clothing as it can be cool in the early morning but warmer as the sun rises. Closed-toe shoes are recommended.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Are there any age or health restrictions?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Children should be at least 8 years old and accompanied by an adult. Participants should be able to stand for the duration of the flight and manage a step into the basket. Those with serious health conditions should consult their doctor.</p>
-                    </div>
-                </div>
-            </div>
+        <button id="verifyEmailBtn" class="btn btn-secondary">Send Verification Email</button>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="form-group">
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword" class="form-control" placeholder="Enter current password">
+        <div class="error-message" id="currentPasswordError">Please enter your current password</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+        <div class="password-strength">
+          <div class="password-strength-bar" id="passwordStrengthBar"></div>
         </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="section cta">
-        <div class="container">
-            <h2 class="section-title">Ready for Your Celestial Experience?</h2>
-            <p>Book your unforgettable hot air balloon safari today and create memories that will last a lifetime.</p>
-            <a href="booking.html" class="btn">Reserve Your Flight</a>
+        <div class="password-criteria" id="passwordCriteria">
+          <div id="lengthCriteria">At least 8 characters</div>
+          <div id="uppercaseCriteria">One uppercase letter</div>
+          <div id="numberCriteria">One number</div>
+          <div id="specialCriteria">One special character</div>
         </div>
-    </section>
+        <div class="error-message" id="newPasswordError">Please enter a valid password</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirm New Password</label>
+        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+      </div>
+      
+      <button id="changePasswordBtn" class="btn">Change Password</button>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Celestial Africa</h3>
-                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="experience.html">The Experience</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Queen Elizabeth National Park, Uganda</li>
-                        <li><i class="fas fa-phone"></i> +256 700 955 563</li>
-                        <li><i class="fas fa-envelope"></i> Celestialafricaltd@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Celestial Africa Limited. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Preferences Section -->
+    <div class="update-section">
+      <div class="section-title">
+        <i class="fas fa-cog"></i>
+        <span>Preferences</span>
+      </div>
+      
+      <div class="switch-container">
+        <span class="switch-label">Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" checked aria-checked="true">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="switch-container">
+        <span class="switch-label">Email Notifications</span>
+        <label class="switch">
+          <input type="checkbox" id="emailNotificationsToggle" checked aria-checked="true">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="switch-container">
+        <span class="switch-label">SMS Notifications</span>
+        <label class="switch">
+          <input type="checkbox" id="smsNotificationsToggle" aria-checked="false">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="form-group">
+        <label for="language">Language</label>
+        <select id="language" class="form-control">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <!-- More languages would be added here -->
+        </select>
+      </div>
+      
+      <button id="savePreferencesBtn" class="btn">Save Preferences</button>
+    </div>
 
-    <script>
-        // Sticky Header with Blur Effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.style.background = "var(--nav-bg)";
-                header.style.backdropFilter = "blur(10px)";
-                header.style.webkitBackdropFilter = "blur(10px)";
-            } else {
-                header.style.background = "var(--nav-bg)";
-                header.style.backdropFilter = "blur(10px)";
-                header.style.webkitBackdropFilter = "blur(10px)";
-            }
+    <!-- Account Actions Section -->
+    <div class="update-section">
+      <div class="section-title">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Account Actions</span>
+      </div>
+      
+      <button id="logoutBtn" class="btn btn-secondary" style="margin-bottom: 10px;">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </button>
+      
+      <button id="deleteAccountBtn" class="btn btn-secondary" style="background: var(--error);">
+        <i class="fas fa-trash-alt"></i> Delete Account
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="dashboard.html" class="bottom-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="withdraw.html" class="bottom-nav-item">
+      <i class="fas fa-wallet"></i>
+      <span>Withdraw</span>
+    </a>
+    <a href="profit.html" class="bottom-nav-item">
+      <i class="fas fa-chart-line"></i>
+      <span>Profit</span>
+    </a>
+    <a href="account.html" class="bottom-nav-item active">
+      <i class="fas fa-user"></i>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastNotification"></div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+
+  <!-- Your Custom JavaScript -->
+  <script>
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlAtG3aDSqN7iLX-HtoMZopsPT4LsMni0",
+      authDomain: "elitefxreturn.firebaseapp.com",
+      projectId: "elitefxreturn",
+      storageBucket: "elitefxreturn.appspot.com",
+      messagingSenderId: "333913364691",
+      appId: "1:333913364691:web:82566d278552b6cdec1c26"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    let currentUser = null;
+    let userData = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initAuth();
+      setupEventListeners();
+      setupPasswordStrengthMeter();
+    });
+
+    function initAuth() {
+      showLoading(true);
+      auth.onAuthStateChanged((user) => {
+        showLoading(false);
+        if (user) {
+          currentUser = user;
+          loadUserData(user.uid);
+          updateUserProfileUI(user);
+        } else {
+          window.location.href = 'login.html';
+        }
+      });
+    }
+
+    function loadUserData(userId) {
+      showLoading(true);
+      db.collection('users').doc(userId).get()
+        .then((doc) => {
+          showLoading(false);
+          if (doc.exists) {
+            userData = doc.data();
+            updateFormFields(userData);
+          } else {
+            console.log("No user data found");
+          }
+        })
+        .catch((error) => {
+          showLoading(false);
+          showToast('Error loading user data', 'error');
+          console.error('Error loading user data:', error);
         });
+    }
+
+    function updateUserProfileUI(user) {
+      document.getElementById('userName').textContent = user.displayName || 'User';
+      document.getElementById('userEmail').textContent = user.email;
+      
+      // Update email verification status
+      const emailStatusText = document.getElementById('emailStatusText');
+      const verificationBadge = document.getElementById('verificationBadge');
+      
+      if (user.emailVerified) {
+        emailStatusText.textContent = 'Status: Verified';
+        verificationBadge.textContent = 'Verified';
+        verificationBadge.className = 'verification-badge';
+        document.getElementById('verifyEmailBtn').style.display = 'none';
+      } else {
+        emailStatusText.textContent = 'Status: Not Verified';
+        verificationBadge.textContent = 'Pending';
+        verificationBadge.className = 'pending-badge';
+        document.getElementById('verifyEmailBtn').style.display = 'block';
+      }
+    }
+
+    function updateFormFields(data) {
+      // Personal Info
+      document.getElementById('fullName').value = data.fullName || '';
+      document.getElementById('phoneNumber').value = data.phoneNumber || '';
+      document.getElementById('country').value = data.country || '';
+      
+      // Preferences
+      document.getElementById('darkModeToggle').checked = data.preferences?.darkMode !== false;
+      document.getElementById('emailNotificationsToggle').checked = data.preferences?.emailNotifications !== false;
+      document.getElementById('smsNotificationsToggle').checked = data.preferences?.smsNotifications || false;
+      document.getElementById('language').value = data.preferences?.language || 'en';
+      
+      // Update ARIA attributes for toggles
+      document.getElementById('darkModeToggle').setAttribute('aria-checked', 
+        document.getElementById('darkModeToggle').checked);
+      document.getElementById('emailNotificationsToggle').setAttribute('aria-checked', 
+        document.getElementById('emailNotificationsToggle').checked);
+      document.getElementById('smsNotificationsToggle').setAttribute('aria-checked', 
+        document.getElementById('smsNotificationsToggle').checked);
+    }
+
+    function setupPasswordStrengthMeter() {
+      const passwordInput = document.getElementById('newPassword');
+      const strengthBar = document.getElementById('passwordStrengthBar');
+      const criteria = {
+        length: document.getElementById('lengthCriteria'),
+        uppercase: document.getElementById('uppercaseCriteria'),
+        number: document.getElementById('numberCriteria'),
+        special: document.getElementById('specialCriteria')
+      };
+      
+      passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        let strength = 0;
         
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('nav-links').classList.toggle('active');
-            
-            // Toggle menu icon between hamburger and close
-            const icon = this.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+        // Check password criteria
+        const hasLength = password.length >= 8;
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecial = /[^A-Za-z0-9]/.test(password);
         
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-links').classList.remove('active');
-                document.getElementById('mobile-menu-btn').querySelector('i').classList.remove('fa-times');
-                document.getElementById('mobile-menu-btn').querySelector('i').classList.add('fa-bars');
+        // Update criteria indicators
+        criteria.length.className = hasLength ? 'criteria-met' : '';
+        criteria.uppercase.className = hasUppercase ? 'criteria-met' : '';
+        criteria.number.className = hasNumber ? 'criteria-met' : '';
+        criteria.special.className = hasSpecial ? 'criteria-met' : '';
+        
+        // Calculate strength
+        if (hasLength) strength++;
+        if (hasUppercase) strength++;
+        if (hasNumber) strength++;
+        if (hasSpecial) strength++;
+        
+        // Update strength bar
+        strengthBar.className = 'password-strength-bar';
+        if (strength > 0) {
+          if (strength <= 2) {
+            strengthBar.classList.add('strength-weak');
+          } else if (strength === 3) {
+            strengthBar.classList.add('strength-medium');
+          } else {
+            strengthBar.classList.add('strength-strong');
+          }
+        }
+      });
+    }
+
+    function validatePersonalInfo() {
+      let isValid = true;
+      
+      // Validate full name
+      const fullName = document.getElementById('fullName').value.trim();
+      if (!fullName) {
+        document.getElementById('fullNameError').style.display = 'block';
+        document.getElementById('fullName').classList.add('error');
+        isValid = false;
+      } else {
+        document.getElementById('fullNameError').style.display = 'none';
+        document.getElementById('fullName').classList.remove('error');
+      }
+      
+      // Validate country
+      const country = document.getElementById('country').value;
+      if (!country) {
+        document.getElementById('countryError').style.display = 'block';
+        document.getElementById('country').classList.add('error');
+        isValid = false;
+      } else {
+        document.getElementById('countryError').style.display = 'none';
+        document.getElementById('country').classList.remove('error');
+      }
+      
+      return isValid;
+    }
+
+    function validatePasswordForm() {
+      let isValid = true;
+      
+      // Validate current password
+      const currentPassword = document.getElementById('currentPassword').value;
+      if (!currentPassword) {
+        document.getElementById('currentPasswordError').style.display = 'block';
+        document.getElementById('currentPassword').classList.add('error');
+        isValid = false;
+      } else {
+        document.getElementById('currentPasswordError').style.display = 'none';
+        document.getElementById('currentPassword').classList.remove('error');
+      }
+      
+      // Validate new password
+      const newPassword = document.getElementById('newPassword').value;
+      if (!newPassword || newPassword.length < 8) {
+        document.getElementById('newPasswordError').style.display = 'block';
+        document.getElementById('newPassword').classList.add('error');
+        isValid = false;
+      } else {
+        document.getElementById('newPasswordError').style.display = 'none';
+        document.getElementById('newPassword').classList.remove('error');
+      }
+      
+      // Validate confirm password
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (newPassword !== confirmPassword) {
+        document.getElementById('confirmPasswordError').style.display = 'block';
+        document.getElementById('confirmPassword').classList.add('error');
+        isValid = false;
+      } else {
+        document.getElementById('confirmPasswordError').style.display = 'none';
+        document.getElementById('confirmPassword').classList.remove('error');
+      }
+      
+      return isValid;
+    }
+
+    function setupEventListeners() {
+      // Save Personal Info
+      document.getElementById('savePersonalInfo').addEventListener('click', () => {
+        if (!validatePersonalInfo()) return;
+        
+        const fullName = document.getElementById('fullName').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const country = document.getElementById('country').value;
+        
+        setButtonLoading('savePersonalInfo', true);
+        
+        db.collection('users').doc(currentUser.uid).update({
+          fullName,
+          phoneNumber,
+          country,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(() => {
+          setButtonLoading('savePersonalInfo', false);
+          showToast('Personal information updated successfully', 'success');
+          // Update display name if changed
+          if (fullName !== currentUser.displayName) {
+            currentUser.updateProfile({
+              displayName: fullName
+            }).then(() => {
+              document.getElementById('userName').textContent = fullName;
             });
+          }
+        })
+        .catch((error) => {
+          setButtonLoading('savePersonalInfo', false);
+          showToast('Error updating information', 'error');
+          console.error('Error updating user data:', error);
         });
+      });
+      
+      // Verify Email
+      document.getElementById('verifyEmailBtn').addEventListener('click', () => {
+        setButtonLoading('verifyEmailBtn', true);
+        currentUser.sendEmailVerification()
+          .then(() => {
+            setButtonLoading('verifyEmailBtn', false);
+            showToast('Verification email sent. Please check your inbox.', 'success');
+          })
+          .catch((error) => {
+            setButtonLoading('verifyEmailBtn', false);
+            showToast('Error sending verification email', 'error');
+            console.error('Error sending verification email:', error);
+          });
+      });
+      
+      // Change Password
+      document.getElementById('changePasswordBtn').addEventListener('click', () => {
+        if (!validatePasswordForm()) return;
         
-        // FAQ Toggle
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.classList.toggle('active');
-                
-                const icon = question.querySelector('i');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            });
+        const currentPassword = document.getElementById('currentPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        setButtonLoading('changePasswordBtn', true);
+        
+        // Reauthenticate user before changing password
+        const credential = firebase.auth.EmailAuthProvider.credential(
+          currentUser.email,
+          currentPassword
+        );
+        
+        currentUser.reauthenticateWithCredential(credential)
+          .then(() => {
+            return currentUser.updatePassword(newPassword);
+          })
+          .then(() => {
+            setButtonLoading('changePasswordBtn', false);
+            showToast('Password changed successfully', 'success');
+            // Clear password fields
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            
+            // Reset strength meter
+            document.getElementById('passwordStrengthBar').className = 'password-strength-bar';
+            const criteriaElements = document.querySelectorAll('.password-criteria > div');
+            criteriaElements.forEach(el => el.className = '');
+          })
+          .catch((error) => {
+            setButtonLoading('changePasswordBtn', false);
+            showToast('Error changing password', 'error');
+            console.error('Error changing password:', error);
+          });
+      });
+      
+      // Save Preferences
+      document.getElementById('savePreferencesBtn').addEventListener('click', () => {
+        const preferences = {
+          darkMode: document.getElementById('darkModeToggle').checked,
+          emailNotifications: document.getElementById('emailNotificationsToggle').checked,
+          smsNotifications: document.getElementById('smsNotificationsToggle').checked,
+          language: document.getElementById('language').value
+        };
+        
+        setButtonLoading('savePreferencesBtn', true);
+        
+        db.collection('users').doc(currentUser.uid).update({
+          preferences,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(() => {
+          setButtonLoading('savePreferencesBtn', false);
+          showToast('Preferences saved successfully', 'success');
+          // Apply dark mode immediately
+          if (preferences.darkMode) {
+            document.documentElement.style.setProperty('--primary', '#0d1b2a');
+            document.documentElement.style.setProperty('--secondary', '#1b263b');
+            document.documentElement.style.setProperty('--card-bg', '#1e293b');
+          } else {
+            document.documentElement.style.setProperty('--primary', '#f8f9fa');
+            document.documentElement.style.setProperty('--secondary', '#e9ecef');
+            document.documentElement.style.setProperty('--card-bg', '#ffffff');
+          }
+        })
+        .catch((error) => {
+          setButtonLoading('savePreferencesBtn', false);
+          showToast('Error saving preferences', 'error');
+          console.error('Error saving preferences:', error);
         });
-    </script>
+      });
+      
+      // Toggle switches accessibility
+      const toggles = document.querySelectorAll('.switch input');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+          this.setAttribute('aria-checked', this.checked);
+        });
+      });
+      
+      // Logout
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to log out?')) {
+          auth.signOut()
+            .then(() => {
+              window.location.href = 'login.html';
+            })
+            .catch((error) => {
+              showToast('Error logging out', 'error');
+              console.error('Error logging out:', error);
+            });
+        }
+      });
+      
+      // Delete Account
+      document.getElementById('deleteAccountBtn').addEventListener('click', () => {
+        const confirmDelete = confirm('Are you sure you want to delete your account? This action cannot be undone.');
+        if (confirmDelete) {
+          const password = prompt('Please enter your password to confirm account deletion:');
+          if (!password) return;
+          
+          showLoading(true);
+          
+          // Reauthenticate before deletion
+          const credential = firebase.auth.EmailAuthProvider.credential(
+            currentUser.email,
+            password
+          );
+          
+          currentUser.reauthenticateWithCredential(credential)
+            .then(() => {
+              // First delete user data
+              return db.collection('users').doc(currentUser.uid).delete();
+            })
+            .then(() => {
+              // Then delete the user account
+              return currentUser.delete();
+            })
+            .then(() => {
+              showLoading(false);
+              window.location.href = 'login.html';
+            })
+            .catch((error) => {
+              showLoading(false);
+              showToast('Error deleting account. Please check your password.', 'error');
+              console.error('Error deleting account:', error);
+            });
+        }
+      });
+    }
+
+    function showToast(message, type = 'info') {
+      const toast = document.getElementById('toastNotification');
+      toast.textContent = message;
+      toast.className = 'toast';
+      if (type === 'error') {
+        toast.classList.add('error');
+      } else if (type === 'success') {
+        toast.classList.add('success');
+      }
+      toast.style.display = 'block';
+
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    function showLoading(show) {
+      document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
+    }
+
+    function setButtonLoading(buttonId, isLoading) {
+      const button = document.getElementById(buttonId);
+      if (isLoading) {
+        button.classList.add('btn-loading');
+      } else {
+        button.classList.remove('btn-loading');
+      }
+    }
+  </script>
 </body>
 </html>
