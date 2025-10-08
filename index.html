@@ -3,37 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celestial Africa Limited | Hot Air Balloon Safaris in Uganda</title>
+    <title>Celestial Africa Limited | Premium Hot Air Balloon Safaris in Uganda</title>
+    <meta name="description" content="Experience Uganda's breathtaking wildlife from above with Celestial Africa's premium hot air balloon safaris. Book your unforgettable aerial adventure today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* CSS Variables for Consistent Design */
         :root {
             --primary: #1a365d;
+            --primary-light: #2d4a7c;
             --secondary: #d69e2e;
+            --secondary-light: #e9b64a;
             --accent: #742a2a;
             --light: #f8f5e6;
+            --light-alt: #fffdf5;
             --dark: #2d3748;
-            --nav-bg: rgba(26, 54, 93, 0.85);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --dark-light: #4a5568;
+            --nav-bg: rgba(26, 54, 93, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 100px 0;
         }
         
+        /* Base Styles & Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
+            font-family: 'Poppins', sans-serif;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
         }
         
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         
         .container {
@@ -43,23 +78,85 @@
             padding: 0 20px;
         }
         
+        .section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-light);
+        }
+        
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
             background: var(--secondary);
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-light);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
         }
         
         .btn:hover {
-            background: #b38221;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(4px);
         }
         
         .btn-outline {
@@ -68,53 +165,31 @@
             color: var(--secondary);
         }
         
-        .btn-outline:hover {
+        .btn-outline:before {
             background: var(--secondary);
+        }
+        
+        .btn-outline:hover {
             color: white;
         }
         
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* Header & Navigation with Blur Effect */
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.4s ease;
+            padding: 20px 0;
+            transition: var(--transition);
         }
         
         header.scrolled {
-            padding: 10px 0;
+            padding: 12px 0;
             background: var(--nav-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
@@ -130,7 +205,7 @@
         }
         
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: white;
             font-family: 'Playfair Display', serif;
@@ -153,8 +228,8 @@
         .nav-links a {
             color: white;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 0;
+            padding: 8px 0;
+            position: relative;
         }
         
         .nav-links a:after {
@@ -165,7 +240,7 @@
             bottom: 0;
             left: 0;
             background-color: var(--secondary);
-            transition: width 0.3s ease;
+            transition: var(--transition);
         }
         
         .nav-links a:hover:after {
@@ -182,37 +257,58 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
         }
         
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
             padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 600px;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
         
         .hero-buttons {
@@ -222,36 +318,93 @@
             margin-top: 30px;
         }
         
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
         /* Experience Section */
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
             margin-top: 50px;
         }
         
         .experience-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            transition: var(--transition);
+            position: relative;
         }
         
         .experience-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
         }
         
         .card-img {
-            height: 200px;
+            height: 240px;
             overflow: hidden;
+            position: relative;
         }
         
         .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s ease;
         }
         
         .experience-card:hover .card-img img {
@@ -259,42 +412,108 @@
         }
         
         .card-content {
-            padding: 20px;
+            padding: 25px;
         }
         
         .card-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
             color: var(--primary);
-            font-family: 'Playfair Display', serif;
+        }
+        
+        .card-content p {
+            color: var(--dark-light);
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .card-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Balloon Details Section */
+        .balloon-details {
+            background: var(--light-alt);
+        }
+        
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .detail-item {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .detail-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .detail-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
         
         /* Safety Section */
-        .safety {
-            background: var(--light);
-        }
-        
         .safety-content {
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
+            align-items: center;
         }
         
         .safety-text {
-            flex: 1;
+            order: 1;
         }
         
         .safety-image {
-            flex: 1;
-            border-radius: 10px;
+            order: 2;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
         }
         
         .safety-image img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.7s ease;
+        }
+        
+        .safety-image:hover img {
+            transform: scale(1.05);
         }
         
         .safety-features {
@@ -303,51 +522,201 @@
         
         .safety-feature {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+            align-items: flex-start;
+            margin-bottom: 25px;
         }
         
         .safety-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 20px;
             flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+        
+        .safety-feature-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary);
         }
         
         /* Testimonials */
         .testimonials-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
         }
         
+        .testimonial-slider {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
         .testimonial {
-            text-align: center;
-            padding: 30px;
+            min-width: 100%;
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            margin: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            box-shadow: var(--shadow-lg);
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .testimonial-text:before, .testimonial-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text:before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text:after {
+            bottom: -40px;
+            right: -10px;
         }
         
         .testimonial-author {
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
             color: var(--primary);
         }
         
-        /* CTA Section */
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--dark-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--dark-light);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .testimonial-dot.active {
+            background: var(--secondary);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: var(--light-alt);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Booking CTA Section */
         .cta {
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: white;
@@ -359,31 +728,87 @@
         }
         
         .cta p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(214, 158, 46, 0.1);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
         
         /* Footer */
         footer {
             background: var(--primary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
         
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             position: relative;
-            padding-bottom: 10px;
-            font-family: 'Playfair Display', serif;
+            padding-bottom: 15px;
         }
         
         .footer-column h3:after {
@@ -391,7 +816,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 50px;
             height: 3px;
             background: var(--secondary);
         }
@@ -401,12 +826,20 @@
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: #cbd5e0;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
         }
         
         .footer-links a:hover {
@@ -417,39 +850,91 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
             background: var(--secondary);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
         }
         
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
             }
             
             .safety-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            
+            .safety-text {
+                order: 2;
+            }
+            
+            .safety-image {
+                order: 1;
             }
         }
         
@@ -466,7 +951,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: all 0.5s ease;
+                transition: var(--transition);
                 z-index: 999;
             }
             
@@ -475,7 +960,7 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
             }
             
             .mobile-menu-btn {
@@ -483,7 +968,11 @@
             }
             
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .hero-buttons {
@@ -492,21 +981,38 @@
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .stats-container {
+                grid-template-columns: 1fr;
             }
             
-            .btn {
-                padding: 10px 20px;
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -525,11 +1031,12 @@
             
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#balloon-details">Balloon Details</a></li>
                 <li><a href="#safety">Safety</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="booking.html" class="btn">Book Now</a></li>
             </ul>
         </div>
@@ -538,12 +1045,37 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>COMING SOON IN UGANDA🇺🇬 </h1>
+            <h1>COMING SOON IN UGANDA🇺🇬</h1>
             <h1>Experience Africa's Majesty from the Sky</h1>
             <p>Embark on the most breathtaking hot air balloon safari adventure over Uganda's stunning national parks. Witness wildlife in its natural habitat from a unique perspective.</p>
             <div class="hero-buttons">
-                <a href="booking.html" class="btn">Book Your Flight</a>
-                <a href="experience.html" class="btn btn-outline">Learn More</a>
+                <a href="booking.html" class="btn">Book Your Flight <i class="fas fa-arrow-right"></i></a>
+                <a href="#experience" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-text">Successful Flights</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-text">Customer Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-text">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-text">Safety Record</div>
             </div>
         </div>
     </section>
@@ -552,6 +1084,7 @@
     <section class="section" id="experience">
         <div class="container">
             <h2 class="section-title">The Celestial Experience</h2>
+            <p class="section-subtitle">Our hot air balloon safaris offer an unforgettable journey above Uganda's most spectacular landscapes and wildlife reserves.</p>
             <div class="experience-grid">
                 <div class="experience-card">
                     <div class="card-img">
@@ -559,7 +1092,8 @@
                     </div>
                     <div class="card-content">
                         <h3>Sunrise Preparation</h3>
-                        <p>Begin your adventure before dawn with refreshments as you watch the magnificent balloons being inflated.</p>
+                        <p>Begin your adventure before dawn with refreshments as you watch the magnificent balloons being inflated against the backdrop of an African sunrise.</p>
+                        <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -569,7 +1103,8 @@
                     </div>
                     <div class="card-content">
                         <h3>Serene Flight</h3>
-                        <p>Drift silently above stunning landscapes and wildlife for approximately one hour with expert pilot commentary.</p>
+                        <p>Drift silently above stunning landscapes and wildlife for approximately one hour with expert pilot commentary and photography opportunities.</p>
+                        <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -579,8 +1114,42 @@
                     </div>
                     <div class="card-content">
                         <h3>Champagne Celebration</h3>
-                        <p>Toast to your journey with a traditional champagne ceremony and gourmet breakfast in the bush.</p>
+                        <p>Toast to your journey with a traditional champagne ceremony and gourmet breakfast in the bush, sharing stories of your aerial adventure.</p>
+                        <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Balloon Details Section -->
+    <section class="section balloon-details" id="balloon-details">
+        <div class="container">
+            <h2 class="section-title">Our Balloon Fleet</h2>
+            <p class="section-subtitle">We operate state-of-the-art hot air balloons designed for safety, comfort, and optimal wildlife viewing.</p>
+            <div class="details-container">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Advanced Balloon Technology</h3>
+                    <p>Our Cameron Balloons (UK) are crafted with ripstop nylon and feature advanced burner systems for smooth, controlled flight.</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Spacious Baskets</h3>
+                    <p>Our baskets accommodate 8-16 passengers comfortably with partitioned sections for stability and unobstructed views.</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Photography-Friendly Design</h3>
+                    <p>Special viewing windows and stable platforms ensure perfect photo opportunities throughout your flight.</p>
                 </div>
             </div>
         </div>
@@ -599,9 +1168,9 @@
                             <div class="safety-icon">
                                 <i class="fas fa-certificate"></i>
                             </div>
-                            <div>
+                            <div class="safety-feature-content">
                                 <h4>Fully Certified</h4>
-                                <p>Certified by Uganda Civil Aviation Authority (UCAA)</p>
+                                <p>Certified by Uganda Civil Aviation Authority (UCAA) and international aviation standards.</p>
                             </div>
                         </div>
                         
@@ -609,9 +1178,9 @@
                             <div class="safety-icon">
                                 <i class="fas fa-user-shield"></i>
                             </div>
-                            <div>
+                            <div class="safety-feature-content">
                                 <h4>Expert Pilots</h4>
-                                <p>Internationally trained and experienced commercial balloon pilots</p>
+                                <p>Internationally trained and experienced commercial balloon pilots with thousands of flight hours.</p>
                             </div>
                         </div>
                         
@@ -619,9 +1188,9 @@
                             <div class="safety-icon">
                                 <i class="fas fa-tools"></i>
                             </div>
-                            <div>
+                            <div class="safety-feature-content">
                                 <h4>Rigorous Maintenance</h4>
-                                <p>Daily equipment checks and regular maintenance schedules</p>
+                                <p>Daily equipment checks and regular maintenance schedules exceeding manufacturer recommendations.</p>
                             </div>
                         </div>
                     </div>
@@ -634,18 +1203,149 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">Take a visual journey through our hot air balloon safari experiences in Uganda's most beautiful landscapes.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hot Air Balloon Safari">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Balloon Preparation">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Aerial View">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Wildlife Viewing">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="section" id="testimonials">
+        <div class="container">
             <h2 class="section-title">What Our Guests Say</h2>
+            <p class="section-subtitle">Don't just take our word for it - hear from travelers who have experienced our hot air balloon safaris.</p>
             <div class="testimonials-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">"An absolutely breathtaking experience! Floating over Queen Elizabeth National Park at sunrise was the highlight of our Uganda trip. The professional team made us feel safe throughout."</p>
-                    <p class="testimonial-author">- Sarah Johnson, United States</p>
+                <div class="testimonial-slider" id="testimonial-slider">
+                    <div class="testimonial">
+                        <p class="testimonial-text">An absolutely breathtaking experience! Floating over Queen Elizabeth National Park at sunrise was the highlight of our Uganda trip. The professional team made us feel safe throughout, and the champagne breakfast afterward was the perfect ending.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>United States</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">The attention to detail was exceptional - from the pre-flight briefing to the champagne breakfast. This is a must-do experience for anyone visiting Uganda. We saw elephants, giraffes, and countless other animals from a perspective we never imagined possible.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Thompson</h4>
+                                <p>United Kingdom</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">As someone who's afraid of heights, I was nervous about this experience, but the crew was incredibly reassuring and professional. The flight was so smooth and peaceful - it completely changed my perspective. Highly recommend this once-in-a-lifetime adventure!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Chen">
+                            </div>
+                            <div class="author-info">
+                                <h4>Lisa Chen</h4>
+                                <p>Australia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav" id="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about our hot air balloon safaris in Uganda.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the best time of year for a hot air balloon safari in Uganda?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The best time for hot air balloon safaris in Uganda is during the dry seasons from December to February and June to September. During these periods, weather conditions are most favorable with clearer skies and better wildlife visibility.</p>
+                    </div>
                 </div>
                 
-                <div class="testimonial">
-                    <p class="testimonial-text">"The attention to detail was exceptional - from the pre-flight briefing to the champagne breakfast. This is a must-do experience for anyone visiting Uganda."</p>
-                    <p class="testimonial-author">- Michael Thompson, United Kingdom</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the entire experience last?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The complete experience typically lasts 3-4 hours. This includes pre-flight preparation and briefing (30-45 minutes), the actual flight (approximately 1 hour), and the post-flight champagne breakfast (about 1 hour).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I wear for a hot air balloon safari?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend wearing comfortable, layered clothing as temperatures can vary. Closed-toe shoes are essential, and don't forget your camera! Early mornings can be cool, but it warms up as the sun rises.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there an age or health restriction for participants?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Children must be at least 7 years old and accompanied by an adult. Participants should be able to stand for the duration of the flight (approximately 1 hour) and have reasonable mobility. Those with serious health conditions or who are pregnant should consult with their doctor before booking.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if weather conditions are not suitable for flying?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Safety is our top priority. If weather conditions are unsuitable, we will reschedule your flight for the next available date or provide a full refund. The final decision to fly is made by our pilot on the morning of your scheduled flight.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -655,8 +1355,11 @@
     <section class="section cta" id="booking">
         <div class="container">
             <h2 class="section-title">Ready for the Adventure of a Lifetime?</h2>
-            <p>Book your celestial journey today and create memories that will last forever.</p>
-            <a href="booking.html" class="btn">Reserve Your Flight</a>
+            <p>Book your celestial journey today and create memories that will last forever. Limited spots available for our inaugural season!</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn">Reserve Your Flight <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
         </div>
     </section>
 
@@ -666,7 +1369,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Celestial Africa</h3>
-                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks.</p>
+                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks. Soar above the savannah and witness Africa's majestic wildlife from a unique perspective.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -678,38 +1381,53 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="experience.html">The Experience</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#experience"><i class="fas fa-chevron-right"></i> The Experience</a></li>
+                        <li><a href="#balloon-details"><i class="fas fa-chevron-right"></i> Balloon Details</a></li>
+                        <li><a href="#safety"><i class="fas fa-chevron-right"></i> Safety</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Queen Elizabeth National Park, Uganda</li>
-                        <li><i class="fas fa-phone"></i> +256 700 955 563</li>
-                        <li><i class="fas fa-envelope"></i> Celestialafricaltd@gmail.com</li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Queen Elizabeth National Park, Uganda</a></li>
+                        <li><a href="tel:+256700955563"><i class="fas fa-phone"></i> +256 700 955 563</a></li>
+                        <li><a href="mailto:Celestialafricaltd@gmail.com"><i class="fas fa-envelope"></i> Celestialafricaltd@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Operating Hours: 5:00 AM - 10:00 AM Daily</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Celestial Africa Limited. All rights reserved.</p>
+                <p>&copy; 2025 Celestial Africa Limited. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d69e2e;"></i> for adventure seekers</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
     <script>
         // Sticky Header with Blur Effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
+            const backToTop = document.getElementById('back-to-top');
+            
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
             }
         });
         
@@ -736,6 +1454,99 @@
                 document.getElementById('mobile-menu-btn').querySelector('i').classList.remove('fa-times');
                 document.getElementById('mobile-menu-btn').querySelector('i').classList.add('fa-bars');
             });
+        });
+        
+        // Testimonial Slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonialSlider.scrollLeft = index * testimonialSlider.offsetWidth;
+            
+            // Update active dot
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            testimonialDots[index].classList.add('active');
+            
+            currentTestimonial = index;
+        }
+        
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialDots.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Back to Top Button
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.src;
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
         });
     </script>
 </body>
