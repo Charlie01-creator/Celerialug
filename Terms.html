@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Celestial Africa Limited</title>
+    <meta name="description" content="Celestial Africa's Terms and Conditions govern your use of our hot air balloon safari services. Please read carefully before booking.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Consistent Design */
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d4a7c;
+            --secondary: #d69e2e;
+            --secondary-light: #e9b64a;
+            --accent: #742a2a;
+            --light: #f8f5e6;
+            --light-alt: #fffdf5;
+            --dark: #2d3748;
+            --dark-light: #4a5568;
+            --nav-bg: rgba(26, 54, 93, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 100px 0;
+        }
+        
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-light);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-light);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:before {
+            background: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: '';
+            margin: 0;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            background: white;
+        }
+        
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            text-align: center;
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .terms-section {
+            margin-bottom: 50px;
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .terms-section h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        .terms-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .terms-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .terms-list li:before {
+            content: '•';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .numbered-list {
+            list-style-type: decimal;
+            margin: 20px 0 20px 20px;
+        }
+        
+        .numbered-list li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .definition-list {
+            margin: 20px 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 15px;
+        }
+        
+        .definition-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .definition-description {
+            color: var(--dark-light);
+            margin-left: 20px;
+        }
+        
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .terms-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .terms-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .terms-table tr:nth-child(even) {
+            background: var(--light);
+        }
+        
+        .terms-table tr:hover {
+            background: rgba(214, 158, 46, 0.1);
+        }
+        
+        .important-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+        }
+        
+        .important-notice h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .important-notice h4 i {
+            margin-right: 10px;
+        }
+        
+        .contact-point {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .contact-point h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light-alt);
+            padding: 30px 0;
+        }
+        
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .nav-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .nav-item {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--nav-bg);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .terms-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .breadcrumb {
+                flex-direction: column;
+            }
+            
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+            
+            .breadcrumb li:after {
+                content: '';
+                margin: 0;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Celestial <span>Africa</span></div>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container page-header-content">
+            <h1>Terms & Conditions</h1>
+            <p>Please read these terms carefully before booking your hot air balloon safari with Celestial Africa.</p>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="quick-nav">
+        <div class="container nav-container">
+            <h3 class="nav-title">Quick Navigation</h3>
+            <div class="nav-grid">
+                <div class="nav-item" onclick="scrollToSection('acceptance')">Acceptance of Terms</div>
+                <div class="nav-item" onclick="scrollToSection('bookings')">Booking & Payments</div>
+                <div class="nav-item" onclick="scrollToSection('cancellations')">Cancellations</div>
+                <div class="nav-item" onclick="scrollToSection('safety')">Safety Requirements</div>
+                <div class="nav-item" onclick="scrollToSection('liability')">Liability</div>
+                <div class="nav-item" onclick="scrollToSection('contact')">Contact</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="section terms-content">
+        <div class="container terms-container">
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Last Updated: January 1, 2024
+            </div>
+            
+            <div class="important-notice">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                <p>By making a booking with Celestial Africa Limited, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. These terms constitute a legally binding agreement between you and Celestial Africa Limited.</p>
+            </div>
+            
+            <div class="terms-section" id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                
+                <h3>1.1 Agreement</h3>
+                <p>These Terms and Conditions ("Terms") govern your use of Celestial Africa Limited's services, including but not limited to hot air balloon safaris, website usage, and any related services ("Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+                
+                <h3>1.2 Modifications</h3>
+                <p>We reserve the right to modify these Terms at any time. Continued use of our Services after changes constitutes acceptance of the modified Terms. We will notify users of significant changes through our website or email.</p>
+                
+                <h3>1.3 Eligibility</h3>
+                <p>You must be at least 18 years old to make a booking. Guests under 18 must be accompanied by a parent or legal guardian who accepts these Terms on their behalf.</p>
+            </div>
+
+            <div class="terms-section" id="bookings">
+                <h2>2. Bookings & Payments</h2>
+                
+                <h3>2.1 Booking Process</h3>
+                <p>All bookings are subject to availability and confirmation. A booking is considered confirmed only when:</p>
+                <ul class="terms-list">
+                    <li>We have received the required deposit or full payment</li>
+                    <li>We have issued a booking confirmation email</li>
+                    <li>All required guest information has been provided</li>
+                </ul>
+                
+                <h3>2.2 Payment Terms</h3>
+                <p>Our payment structure is as follows:</p>
+                <table class="terms-table">
+                    <thead>
+                        <tr>
+                            <th>Booking Type</th>
+                            <th>Deposit Required</th>
+                            <th>Balance Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standard Booking</td>
+                            <td>30% of total</td>
+                            <td>7 days before flight</td>
+                        </tr>
+                        <tr>
+                            <td>Last Minute (within 7 days)</td>
+                            <td>100% of total</td>
+                            <td>At time of booking</td>
+                        </tr>
+                        <tr>
+                            <td>Group Booking (6+ people)</td>
+                            <td>50% of total</td>
+                            <td>14 days before flight</td>
+                        </tr>
+                        <tr>
+                            <td>Private Charter</td>
+                            <td>50% of total</td>
+                            <td>30 days before flight</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>2.3 Pricing</h3>
+                <p>All prices are quoted in US Dollars (USD) and include:</p>
+                <ul class="terms-list">
+                    <li>Hot air balloon flight (approximately 1 hour)</li>
+                    <li>Pre-flight refreshments</li>
+                    <li>Safety briefing and equipment</li>
+                    <li>Champagne celebration</li>
+                    <li>Gourmet bush breakfast</li>
+                    <li>Flight certificate</li>
+                </ul>
+                <p>Prices exclude: transportation to launch site, park entry fees, gratuities, and personal expenses.</p>
+            </div>
+
+            <div class="terms-section" id="cancellations">
+                <h2>3. Cancellations & Changes</h2>
+                
+                <h3>3.1 Customer Cancellations</h3>
+                <p>Cancellation policies are strictly enforced due to limited capacity and operational requirements:</p>
+                <table class="terms-table">
+                    <thead>
+                        <tr>
+                            <th>Cancellation Notice</th>
+                            <th>Refund Amount</th>
+                            <th>Administration Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>More than 30 days before flight</td>
+                            <td>100% of payment</td>
+                            <td>5% administration fee</td>
+                        </tr>
+                        <tr>
+                            <td>15-30 days before flight</td>
+                            <td>75% of payment</td>
+                            <td>10% administration fee</td>
+                        </tr>
+                        <tr>
+                            <td>7-14 days before flight</td>
+                            <td>50% of payment</td>
+                            <td>15% administration fee</td>
+                        </tr>
+                        <tr>
+                            <td>48 hours - 7 days before flight</td>
+                            <td>25% of payment</td>
+                            <td>20% administration fee</td>
+                        </tr>
+                        <tr>
+                            <td>Less than 48 hours before flight</td>
+                            <td>No refund</td>
+                            <td>Full amount forfeited</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>3.2 Weather Cancellations</h3>
+                <p>Hot air ballooning is weather-dependent. We may cancel flights due to:</p>
+                <ul class="terms-list">
+                    <li>Winds exceeding safe operating limits</li>
+                    <li>Poor visibility or fog</li>
+                    <li>Rain or thunderstorms</li>
+                    <li>Unsafe landing conditions</li>
+                </ul>
+                <p>In case of weather cancellation, we offer:</p>
+                <ol class="numbered-list">
+                    <li>Rescheduling to the next available date</li>
+                    <li>Full refund if rescheduling is not possible</li>
+                    <li>Credit voucher for future use</li>
+                </ol>
+                
+                <h3>3.3 Operator Cancellations</h3>
+                <p>We reserve the right to cancel flights due to operational requirements, safety concerns, or force majeure events. In such cases, we will provide a full refund or reschedule your flight.</p>
+            </div>
+
+            <div class="terms-section" id="safety">
+                <h2>4. Safety Requirements</h2>
+                
+                <h3>4.1 Passenger Requirements</h3>
+                <p>For safety reasons, all passengers must:</p>
+                <ul class="terms-list">
+                    <li>Be at least 7 years old</li>
+                    <li>Be able to stand unaided for the duration of the flight (approx. 1 hour)</li>
+                    <li>Be able to enter and exit the basket without assistance</li>
+                    <li>Not be pregnant</li>
+                    <li>Not have serious medical conditions without doctor's clearance</li>
+                    <li>Not be under the influence of alcohol or drugs</li>
+                </ul>
+                
+                <h3>4.2 Health Declaration</h3>
+                <p>Passengers must disclose any medical conditions, disabilities, or medications that may affect their ability to participate safely. We reserve the right to refuse participation to anyone we deem unfit to fly for safety reasons.</p>
+                
+                <h3>4.3 Safety Briefing</h3>
+                <p>All passengers must attend the pre-flight safety briefing. Failure to do so may result in exclusion from the flight without refund. Passengers must follow all instructions from the pilot and crew at all times.</p>
+            </div>
+
+            <div class="terms-section" id="liability">
+                <h2>5. Liability & Insurance</h2>
+                
+                <h3>5.1 Assumption of Risk</h3>
+                <p>Hot air ballooning involves inherent risks. By participating, you acknowledge and accept these risks, including but not limited to:</p>
+                <ul class="terms-list">
+                    <li>Variations in weather conditions</li>
+                    <li>Unexpected landing situations</li>
+                    <li>Motion sickness or discomfort</li>
+                    <li>Injuries during boarding or landing</li>
+                </ul>
+                
+                <h3>5.2 Limitation of Liability</h3>
+                <p>Celestial Africa Limited's liability is limited to the following:</p>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <div class="definition-term">Maximum Liability</div>
+                        <div class="definition-description">Our maximum liability for any claim shall not exceed the price paid for the Services.</div>
+                    </div>
+                    <div class="definition-item">
+                        <div class="definition-term">Excluded Damages</div>
+                        <div class="definition-description">We are not liable for indirect, consequential, or incidental damages.</div>
+                    </div>
+                    <div class="definition-item">
+                        <div class="definition-term">Force Majeure</div>
+                        <div class="definition-description">We are not liable for circumstances beyond our reasonable control.</div>
+                    </div>
+                </div>
+                
+                <h3>5.3 Insurance</h3>
+                <p>We maintain comprehensive public liability insurance as required by Ugandan aviation regulations. However, we strongly recommend that passengers obtain personal travel insurance covering:</p>
+                <ul class="terms-list">
+                    <li>Trip cancellation and interruption</li>
+                    <li>Medical expenses and evacuation</li>
+                    <li>Personal accident coverage</li>
+                    <li>Baggage and personal effects</li>
+                </ul>
+            </div>
+
+            <div class="terms-section" id="conduct">
+                <h2>6. Passenger Conduct</h2>
+                
+                <h3>6.1 Expected Behavior</h3>
+                <p>Passengers must behave in a manner that ensures the safety and enjoyment of all participants. We reserve the right to remove any passenger who:</p>
+                <ul class="terms-list">
+                    <li>Disobeys safety instructions</li>
+                    <li>Behaves in a dangerous or disruptive manner</li>
+                    <li>Is under the influence of alcohol or drugs</li>
+                    <li>Harasses other passengers or crew members</li>
+                </ul>
+                <p>No refund will be provided in such cases.</p>
+                
+                <h3>6.2 Property Damage</h3>
+                <p>Passengers are liable for any damage caused to our equipment or property through negligence or willful misconduct.</p>
+            </div>
+
+            <div class="terms-section" id="intellectual">
+                <h2>7. Intellectual Property</h2>
+                
+                <h3>7.1 Copyright</h3>
+                <p>All content on our website, including text, graphics, logos, and images, is our property and protected by copyright laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+                
+                <h3>7.2 Photography</h3>
+                <p>We may take photographs or videos during flights for promotional purposes. By participating, you grant us permission to use your likeness in marketing materials. If you prefer not to be photographed, please inform us in writing before your flight.</p>
+            </div>
+
+            <div class="terms-section" id="governance">
+                <h2>8. Governing Law & Disputes</h2>
+                
+                <h3>8.1 Governing Law</h3>
+                <p>These Terms are governed by the laws of Uganda. Any disputes shall be subject to the exclusive jurisdiction of the courts of Uganda.</p>
+                
+                <h3>8.2 Dispute Resolution</h3>
+                <p>We prefer to resolve disputes amicably. If a dispute arises, please contact us first. If we cannot resolve the matter, you may pursue mediation or legal action as provided by Ugandan law.</p>
+                
+                <h3>8.3 Severability</h3>
+                <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+            </div>
+
+            <div class="terms-section" id="contact">
+                <h2>9. Contact Information</h2>
+                
+                <p>For questions about these Terms and Conditions, please contact us:</p>
+                
+                <div class="contact-point">
+                    <h4>Legal Department</h4>
+                    <p>Celestial Africa Limited</p>
+                    <p>Queen Elizabeth National Park</p>
+                    <p>Kasese District, Uganda</p>
+                    <p>Email: legal@celestialafrica.com</p>
+                    <p>Phone: +256 700 955563</p>
+                </div>
+                
+                <p>We aim to respond to all inquiries within 5 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="section-title">Ready to Experience the Skies?</h2>
+            <p>Book your unforgettable hot air balloon safari with Celestial Africa today.</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn">Book Your Flight <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Celestial Africa</h3>
+                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks. Soar above the savannah and witness Africa's majestic wildlife from a unique perspective.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="experience.html"><i class="fas fa-chevron-right"></i> The Experience</a></li>
+                        <li><a href="safety.html"><i class="fas fa-chevron-right"></i> Safety</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="cookies.html"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+                        <li><a href="refunds.html"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Celestial Africa Limited. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d69e2e;"></i> for adventure seekers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            
+            // Toggle menu icon between hamburger and close
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.remove('fa-times');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Add loading animation for images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+        });
+        
+        // Table row hover effects
+        const tableRows = document.querySelectorAll('.terms-table tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transition = 'background-color 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>
