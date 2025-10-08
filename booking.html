@@ -3,38 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking & Contact | Celestial Africa Limited</title>
+    <title>Booking & Contact | Premium Hot Air Balloon Safaris in Uganda</title>
+    <meta name="description" content="Book your unforgettable hot air balloon safari with Celestial Africa. Choose from our premium packages and get in touch with our team for an extraordinary adventure.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* CSS Variables for Consistent Design */
         :root {
             --primary: #1a365d;
+            --primary-light: #2d4a7c;
             --secondary: #d69e2e;
+            --secondary-light: #e9b64a;
             --accent: #742a2a;
             --light: #f8f5e6;
+            --light-alt: #fffdf5;
             --dark: #2d3748;
-            --nav-bg: rgba(26, 54, 93, 0.85);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --dark-light: #4a5568;
+            --nav-bg: rgba(26, 54, 93, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 100px 0;
         }
         
+        /* Base Styles & Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
+            font-family: 'Poppins', sans-serif;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
-            background-color: #f9f9f9;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
         }
         
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         
         .container {
@@ -44,23 +76,85 @@
             padding: 0 20px;
         }
         
+        .section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-light);
+        }
+        
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
             background: var(--secondary);
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-light);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
         }
         
         .btn:hover {
-            background: #b38221;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(4px);
         }
         
         .btn-outline {
@@ -69,49 +163,27 @@
             color: var(--secondary);
         }
         
-        .btn-outline:hover {
+        .btn-outline:before {
             background: var(--secondary);
+        }
+        
+        .btn-outline:hover {
             color: white;
         }
         
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* Header & Navigation with Blur Effect */
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.4s ease;
+            padding: 20px 0;
+            transition: var(--transition);
             background: var(--nav-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
@@ -127,7 +199,7 @@
         }
         
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: white;
             font-family: 'Playfair Display', serif;
@@ -150,8 +222,12 @@
         .nav-links a {
             color: white;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 0;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
         }
         
         .nav-links a:after {
@@ -162,10 +238,11 @@
             bottom: 0;
             left: 0;
             background-color: var(--secondary);
-            transition: width 0.3s ease;
+            transition: var(--transition);
         }
         
-        .nav-links a:hover:after {
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
             width: 100%;
         }
         
@@ -179,29 +256,58 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
         }
         
         /* Page Header */
         .page-header {
-            height: 40vh;
+            height: 50vh;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-            padding-top: 80px;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
         }
         
         .page-header-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
         
         .breadcrumb {
@@ -209,10 +315,12 @@
             justify-content: center;
             list-style: none;
             font-size: 0.9rem;
+            margin-top: 20px;
         }
         
         .breadcrumb li {
             margin: 0 10px;
+            position: relative;
         }
         
         .breadcrumb li:after {
@@ -226,206 +334,203 @@
             margin: 0;
         }
         
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
         .breadcrumb a:hover {
             color: var(--secondary);
         }
         
         /* Booking Section */
+        .booking-section {
+            background: var(--light-alt);
+        }
+        
         .booking-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
             margin-top: 30px;
         }
         
         .booking-form {
-            flex: 1;
-            min-width: 300px;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
         }
         
-        .booking-info {
-            flex: 1;
-            min-width: 300px;
+        .booking-form:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
         }
         
         .form-control {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: border 0.3s ease;
+            transition: var(--transition);
+            background: #f8fafc;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--secondary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(214, 158, 46, 0.2);
         }
         
         .form-row {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         
         .form-row .form-group {
             flex: 1;
         }
         
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
         .booking-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            margin-bottom: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .booking-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .booking-card.popular {
+            border: 2px solid var(--secondary);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            z-index: 2;
         }
         
         .booking-card-header {
             background: var(--primary);
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
             font-weight: 600;
+            font-size: 1.2rem;
         }
         
         .booking-card-body {
-            padding: 20px;
+            padding: 25px;
         }
         
         .price {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--primary);
             font-weight: 700;
-            margin: 10px 0;
+            margin: 15px 0;
         }
         
         .price span {
             font-size: 1rem;
-            color: var(--dark);
+            color: var(--dark-light);
             font-weight: 400;
         }
         
         .package-features {
             list-style: none;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         
         .package-features li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
         
         .package-features li i {
             color: var(--secondary);
-            margin-right: 10px;
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
         }
         
         /* Contact Section */
         .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
         
         .contact-form {
-            flex: 1;
-            min-width: 300px;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        
+        .contact-form:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
         .contact-info {
-            flex: 1;
-            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
         
         .info-card {
             background: white;
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: var(--border-radius);
+            padding: 30px;
             box-shadow: var(--shadow);
-            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         
         .info-card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .contact-details {
-            list-style: none;
-        }
-        
-        .contact-details li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-details li i {
-            width: 40px;
-            height: 40px;
-            background: var(--light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        .map-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 300px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
             margin-bottom: 20px;
+            font-size: 1.5rem;
             position: relative;
             padding-bottom: 10px;
-            font-family: 'Playfair Display', serif;
         }
         
-        .footer-column h3:after {
+        .info-card h3:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -435,17 +540,164 @@
             background: var(--secondary);
         }
         
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-details li i {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .contact-details li:hover i {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 300px;
+            transition: var(--transition);
+        }
+        
+        .map-container:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: var(--light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(214, 158, 46, 0.1);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
         .footer-links {
             list-style: none;
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: #cbd5e0;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
         }
         
         .footer-links a:hover {
@@ -456,32 +708,87 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
             background: var(--secondary);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
         }
         
         /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .booking-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -495,7 +802,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: all 0.5s ease;
+                transition: var(--transition);
                 z-index: 999;
             }
             
@@ -504,19 +811,23 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .page-header h1 {
+                font-size: 2.5rem;
             }
             
-            .page-header h1 {
-                font-size: 2.3rem;
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
             }
             
             .form-row {
@@ -525,13 +836,17 @@
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .page-header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .btn {
-                padding: 10px 20px;
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
             
             .breadcrumb {
@@ -545,6 +860,11 @@
             .breadcrumb li:after {
                 content: '';
                 margin: 0;
+            }
+            
+            .booking-form,
+            .contact-form {
+                padding: 25px;
             }
         }
     </style>
@@ -564,9 +884,9 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="experience.html">Experience</a></li>
-                <li><a href="#safety">Safety</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="booking.html" class="active">Contact</a></li>
                 <li><a href="booking.html" class="btn">Book Now</a></li>
             </ul>
@@ -577,6 +897,7 @@
     <section class="page-header">
         <div class="container page-header-content">
             <h1>Book Your Adventure</h1>
+            <p>Reserve your unforgettable hot air balloon safari experience with Celestial Africa. Choose from our premium packages and create memories that will last a lifetime.</p>
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li>Booking</li>
@@ -585,9 +906,10 @@
     </section>
 
     <!-- Booking Section -->
-    <section class="section">
+    <section class="section booking-section">
         <div class="container">
             <h2 class="section-title">Reserve Your Flight</h2>
+            <p class="section-subtitle">Complete the form below to book your hot air balloon safari. Our team will contact you within 24 hours to confirm your reservation.</p>
             <div class="booking-container">
                 <div class="booking-form">
                     <h3>Personal Information</h3>
@@ -614,6 +936,11 @@
                         </div>
                         
                         <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" id="nationality" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="package">Select Package</label>
                             <select id="package" class="form-control" required>
                                 <option value="">Select a package</option>
@@ -635,11 +962,18 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Special Requests</label>
-                            <textarea id="message" class="form-control" rows="4"></textarea>
+                            <label for="accommodation">Accommodation Details</label>
+                            <input type="text" id="accommodation" class="form-control" placeholder="Hotel/Lodge name for pickup">
                         </div>
                         
-                        <button type="submit" class="btn" style="width: 100%;">Complete Booking</button>
+                        <div class="form-group">
+                            <label for="message">Special Requests</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Complete Booking Request
+                        </button>
                     </form>
                 </div>
                 
@@ -651,16 +985,19 @@
                         <div class="booking-card-body">
                             <div class="price">$450 <span>per person</span></div>
                             <ul class="package-features">
-                                <li><i class="fas fa-check"></i> 1-hour balloon flight</li>
-                                <li><i class="fas fa-check"></i> Pre-flight refreshments</li>
-                                <li><i class="fas fa-check"></i> Champagne celebration</li>
+                                <li><i class="fas fa-check"></i> 1-hour balloon flight over national park</li>
+                                <li><i class="fas fa-check"></i> Pre-flight refreshments & safety briefing</li>
+                                <li><i class="fas fa-check"></i> Traditional champagne celebration</li>
                                 <li><i class="fas fa-check"></i> Gourmet bush breakfast</li>
-                                <li><i class="fas fa-check"></i> Flight certificate</li>
+                                <li><i class="fas fa-check"></i> Commemorative flight certificate</li>
+                                <li><i class="fas fa-check"></i> Professional pilot commentary</li>
                             </ul>
+                            <button class="btn btn-outline" style="width: 100%;" onclick="document.getElementById('package').value='standard'">Select This Package</button>
                         </div>
                     </div>
                     
-                    <div class="booking-card">
+                    <div class="booking-card popular">
+                        <div class="popular-badge">Most Popular</div>
                         <div class="booking-card-header">
                             Premium Experience
                         </div>
@@ -668,12 +1005,14 @@
                             <div class="price">$650 <span>per person</span></div>
                             <ul class="package-features">
                                 <li><i class="fas fa-check"></i> Extended 90-minute flight</li>
-                                <li><i class="fas fa-check"></i> Premium champagne</li>
+                                <li><i class="fas fa-check"></i> Premium champagne & canapés</li>
                                 <li><i class="fas fa-check"></i> Gourmet breakfast with private setting</li>
-                                <li><i class="fas fa-check"></i> Professional photo package</li>
-                                <li><i class="fas fa-check"></i> Commemorative gift</li>
+                                <li><i class="fas fa-check"></i> Professional photo package (50+ images)</li>
+                                <li><i class="fas fa-check"></i> Commemorative gift & certificate</li>
                                 <li><i class="fas fa-check"></i> Hotel transfers included</li>
+                                <li><i class="fas fa-check"></i> Priority booking & flexible rescheduling</li>
                             </ul>
+                            <button class="btn" style="width: 100%;" onclick="document.getElementById('package').value='premium'">Select This Package</button>
                         </div>
                     </div>
                 </div>
@@ -682,9 +1021,10 @@
     </section>
 
     <!-- Contact Header -->
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('5.jpg');">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
         <div class="container page-header-content">
             <h1>Contact Us</h1>
+            <p>Have questions or need more information? Our team is here to help you plan your perfect hot air balloon safari experience.</p>
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li>Contact</li>
@@ -696,6 +1036,7 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Reach out to us with any questions or special requests. We're dedicated to making your Celestial Africa experience extraordinary.</p>
             <div class="contact-container">
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
@@ -718,10 +1059,12 @@
                         
                         <div class="form-group">
                             <label for="contactMessage">Your Message</label>
-                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                            <textarea id="contactMessage" class="form-control" rows="5" required placeholder="Tell us about your inquiry..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
                 
@@ -747,7 +1090,15 @@
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <strong>celestialafricaltd@gmail.com</strong><br>
-                                    celestialafricaltd@gmail.com 
+                                    We respond within 24 hours
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Operating Hours</strong><br>
+                                    Flights: 5:30 AM - 9:00 AM Daily<br>
+                                    Office: 8:00 AM - 6:00 PM Daily
                                 </div>
                             </li>
                         </ul>
@@ -761,13 +1112,62 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Booking FAQs</h2>
+            <p class="section-subtitle">Find answers to common questions about booking your hot air balloon safari with Celestial Africa.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How far in advance should I book my hot air balloon safari?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend booking at least 2-4 weeks in advance, especially during peak season (December-February and June-September). For holiday periods and special occasions, we suggest booking 2-3 months ahead to secure your preferred date.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is your cancellation policy?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can cancel your booking up to 7 days before your scheduled flight for a full refund. Cancellations between 2-7 days receive a 50% refund. Cancellations within 48 hours are non-refundable. In case of weather-related cancellations, we offer a full refund or rescheduling.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept credit cards (Visa, MasterCard), bank transfers, and mobile money payments. A 30% deposit is required to secure your booking, with the balance due 7 days before your flight. For last-minute bookings (within 7 days), full payment is required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer group discounts?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer special rates for groups of 6 or more. For groups of 6-8, we provide a 10% discount. Groups of 9-12 receive a 15% discount. Private charters are also available for special occasions and corporate events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Celestial Africa</h3>
-                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks.</p>
+                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks. Soar above the savannah and witness Africa's majestic wildlife from a unique perspective.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -779,45 +1179,36 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="experience.html">The Experience</a></li>
-                        <li><a href="#safety">Safety</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="experience.html"><i class="fas fa-chevron-right"></i> The Experience</a></li>
+                        <li><a href="safety.html"><i class="fas fa-chevron-right"></i> Safety</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Queen Elizabeth National Park, Uganda</li>
-                        <li><i class="fas fa-phone"></i> +256 700 955 563</li>
-                        <li><i class="fas fa-envelope"></i> Celestialafricaltd@gmail.com</li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Queen Elizabeth National Park, Uganda</a></li>
+                        <li><a href="tel:+256700955563"><i class="fas fa-phone"></i> +256 700 955 563</a></li>
+                        <li><a href="mailto:celestialafricaltd@gmail.com"><i class="fas fa-envelope"></i> celestialafricaltd@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Celestial Africa Limited. All rights reserved.</p>
+                <p>&copy; 2025 Celestial Africa Limited. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d69e2e;"></i> for adventure seekers</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <script>
-        // Sticky Header with Blur Effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.style.background = "var(--nav-bg)";
-                header.style.backdropFilter = "blur(10px)";
-                header.style.webkitBackdropFilter = "blur(10px)";
-            } else {
-                header.style.background = "var(--nav-bg)";
-                header.style.backdropFilter = "blur(10px)";
-                header.style.webkitBackdropFilter = "blur(10px)";
-            }
-        });
-        
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('active');
@@ -846,15 +1237,119 @@
         // Form Submissions
         document.getElementById('booking-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your booking request! We will contact you shortly to confirm your reservation.');
-            this.reset();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your booking request! We will contact you within 24 hours to confirm your reservation and discuss payment details.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
         
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you as soon as possible.');
-            this.reset();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you as soon as possible.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Package selection buttons
+        document.querySelectorAll('.booking-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // Set minimum date for booking to today
+        const dateInput = document.getElementById('date');
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const minDate = tomorrow.toISOString().split('T')[0];
+        dateInput.min = minDate;
+        
+        // Add placeholder text for date input
+        dateInput.placeholder = "Select a date";
     </script>
 </body>
 </html>
