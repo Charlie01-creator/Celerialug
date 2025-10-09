@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement | Celestial Africa Limited</title>
+    <meta name="description" content="Celestial Africa's commitment to digital accessibility for all users, including those with disabilities.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Consistent Design */
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d4a7c;
+            --secondary: #d69e2e;
+            --secondary-light: #e9b64a;
+            --accent: #742a2a;
+            --light: #f8f5e6;
+            --light-alt: #fffdf5;
+            --dark: #2d3748;
+            --dark-light: #4a5568;
+            --nav-bg: rgba(26, 54, 93, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 100px 0;
+        }
+        
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-light);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-light);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:before {
+            background: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: '';
+            margin: 0;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Accessibility Content */
+        .accessibility-content {
+            background: white;
+        }
+        
+        .accessibility-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            text-align: center;
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .accessibility-section {
+            margin-bottom: 50px;
+        }
+        
+        .accessibility-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .accessibility-section h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        .accessibility-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .accessibility-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .accessibility-list li:before {
+            content: '•';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .numbered-list {
+            list-style-type: decimal;
+            margin: 20px 0 20px 20px;
+        }
+        
+        .numbered-list li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .definition-list {
+            margin: 20px 0;
+        }
+        
+        .definition-item {
+            margin-bottom: 15px;
+        }
+        
+        .definition-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .definition-description {
+            color: var(--dark-light);
+            margin-left: 20px;
+        }
+        
+        .accessibility-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .accessibility-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .accessibility-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .accessibility-table tr:nth-child(even) {
+            background: var(--light);
+        }
+        
+        .accessibility-table tr:hover {
+            background: rgba(214, 158, 46, 0.1);
+        }
+        
+        .important-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+        }
+        
+        .important-notice h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .important-notice h4 i {
+            margin-right: 10px;
+        }
+        
+        .contact-point {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .contact-point h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Accessibility Features */
+        .accessibility-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: var(--light-alt);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light-alt);
+            padding: 30px 0;
+        }
+        
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .nav-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .nav-item {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+        }
+        
+        /* Accessibility Widget */
+        .accessibility-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-lg);
+            z-index: 998;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .accessibility-widget:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+        
+        .accessibility-widget i {
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--nav-bg);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .accessibility-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .accessibility-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .accessibility-widget {
+                bottom: 90px;
+                right: 20px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .breadcrumb {
+                flex-direction: column;
+            }
+            
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+            
+            .breadcrumb li:after {
+                content: '';
+                margin: 0;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .accessibility-widget {
+                bottom: 80px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .accessibility-widget span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Celestial <span>Africa</span></div>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container page-header-content">
+            <h1>Accessibility Statement</h1>
+            <p>Our commitment to ensuring digital accessibility for everyone, including people with disabilities.</p>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Accessibility Statement</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="quick-nav">
+        <div class="container nav-container">
+            <h3 class="nav-title">Quick Navigation</h3>
+            <div class="nav-grid">
+                <div class="nav-item" onclick="scrollToSection('commitment')">Our Commitment</div>
+                <div class="nav-item" onclick="scrollToSection('standards')">Accessibility Standards</div>
+                <div class="nav-item" onclick="scrollToSection('features')">Accessibility Features</div>
+                <div class="nav-item" onclick="scrollToSection('limitations')">Known Limitations</div>
+                <div class="nav-item" onclick="scrollToSection('feedback')">Feedback & Assistance</div>
+                <div class="nav-item" onclick="scrollToSection('physical')">Physical Accessibility</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility Content -->
+    <section class="section accessibility-content">
+        <div class="container accessibility-container">
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Last Updated: January 1, 2024
+            </div>
+            
+            <div class="important-notice">
+                <h4><i class="fas fa-universal-access"></i> Our Accessibility Commitment</h4>
+                <p>Celestial Africa is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to achieve this goal.</p>
+            </div>
+            
+            <div class="accessibility-section" id="commitment">
+                <h2>Our Commitment to Accessibility</h2>
+                
+                <p>At Celestial Africa, we believe that the internet should be available and accessible to everyone. We are committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability.</p>
+                
+                <p>We are actively working to increase the accessibility and usability of our website and in doing so adhere to many of the available standards and guidelines.</p>
+                
+                <h3>Our Goals</h3>
+                <ul class="accessibility-list">
+                    <li>Ensure our website is perceivable, operable, understandable, and robust for all users</li>
+                    <li>Continuously improve accessibility through regular testing and user feedback</li>
+                    <li>Provide alternative ways to access our content and services</li>
+                    <li>Train our staff on accessibility best practices</li>
+                    <li>Maintain compliance with relevant accessibility standards and regulations</li>
+                </ul>
+            </div>
+
+            <div class="accessibility-section" id="standards">
+                <h2>Accessibility Standards</h2>
+                
+                <p>This website endeavors to conform to level AA of the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.1. These guidelines explain how to make web content more accessible for people with disabilities.</p>
+                
+                <p>We have implemented the following accessibility features on our website:</p>
+                
+                <div class="accessibility-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-title">Visual Accessibility</div>
+                        <p>High contrast options, resizable text, and clear typography for better readability</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <div class="feature-title">Keyboard Navigation</div>
+                        <p>Full website functionality accessible via keyboard without requiring a mouse</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-assistive-listening-systems"></i>
+                        </div>
+                        <div class="feature-title">Screen Reader Compatible</div>
+                        <p>Proper semantic structure and ARIA labels for screen reader users</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="feature-title">Customizable Experience</div>
+                        <p>Options to adjust text size, contrast, and other display settings</p>
+                    </div>
+                </div>
+                
+                <h3>Conformance Status</h3>
+                <p>The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
+                
+                <table class="accessibility-table">
+                    <thead>
+                        <tr>
+                            <th>WCAG Level</th>
+                            <th>Our Status</th>
+                            <th>Target Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Level A</td>
+                            <td>Fully Conformant</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Level AA</td>
+                            <td>Mostly Conformant</td>
+                            <td>Ongoing Improvements</td>
+                        </tr>
+                        <tr>
+                            <td>Level AAA</td>
+                            <td>Partially Conformant</td>
+                            <td>Long-term Goal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="accessibility-section" id="features">
+                <h2>Accessibility Features</h2>
+                
+                <h3>Navigation & Structure</h3>
+                <ul class="accessibility-list">
+                    <li>Clear and consistent navigation throughout the website</li>
+                    <li>Logical heading structure for easy content scanning</li>
+                    <li>Skip to main content links for keyboard and screen reader users</li>
+                    <li>Breadcrumb navigation to show current location within the site</li>
+                    <li>Descriptive link text that makes sense out of context</li>
+                </ul>
+                
+                <h3>Visual Design</h3>
+                <ul class="accessibility-list">
+                    <li>Sufficient color contrast between text and background</li>
+                    <li>Text resizing capabilities without breaking the layout</li>
+                    <li>Clear and legible typography with appropriate sizing</li>
+                    <li>Responsive design that works on various screen sizes</li>
+                    <li>Meaningful icons with text alternatives</li>
+                </ul>
+                
+                <h3>Multimedia & Interactive Elements</h3>
+                <ul class="accessibility-list">
+                    <li>Alternative text for all informative images</li>
+                    <li>Captions and transcripts for audio and video content</li>
+                    <li>Clear form labels and error messages</li>
+                    <li>Keyboard-accessible interactive elements</li>
+                    <li>Sufficient time to read and use content</li>
+                </ul>
+            </div>
+
+            <div class="accessibility-section" id="limitations">
+                <h2>Known Limitations & Areas for Improvement</h2>
+                
+                <p>Despite our best efforts to ensure accessibility of Celestial Africa's website, there may be some limitations. Below is a description of known limitations, and potential solutions. Please contact us if you observe an issue not listed below.</p>
+                
+                <h3>Third-Party Content</h3>
+                <p>Some content on our website is provided by third parties (such as embedded maps, social media feeds, or booking widgets). We cannot always guarantee the accessibility of this third-party content, but we strive to work with providers who share our commitment to accessibility.</p>
+                
+                <h3>Older Documents</h3>
+                <p>Some older PDF documents may not be fully accessible to screen reader software. We are working to replace these with accessible versions or provide alternative formats upon request.</p>
+                
+                <h3>Complex Visualizations</h3>
+                <p>Some complex data visualizations or interactive maps may present challenges for some users. We provide textual alternatives where possible.</p>
+                
+                <h3>Ongoing Improvements</h3>
+                <p>We regularly review our website for accessibility issues and implement improvements. Our development process includes accessibility testing at each stage.</p>
+            </div>
+
+            <div class="accessibility-section" id="feedback">
+                <h2>Feedback & Assistance</h2>
+                
+                <p>We welcome your feedback on the accessibility of Celestial Africa's website. Please let us know if you encounter accessibility barriers:</p>
+                
+                <div class="contact-point">
+                    <h4>Accessibility Coordinator</h4>
+                    <p>Celestial Africa Limited</p>
+                    <p>Queen Elizabeth National Park</p>
+                    <p>Kasese District, Uganda</p>
+                    <p>Email: accessibility@celestialafrica.com</p>
+                    <p>Phone: +256 700 955563</p>
+                </div>
+                
+                <h3>What to Include in Your Feedback</h3>
+                <p>When contacting us about accessibility issues, please include:</p>
+                <ul class="accessibility-list">
+                    <li>The web address (URL) of the page with the issue</li>
+                    <li>A description of the problem you encountered</li>
+                    <li>The technology you were using (browser, device, assistive technology)</li>
+                    <li>Any suggestions for improvement</li>
+                </ul>
+                
+                <p>We try to respond to feedback within 5 business days.</p>
+                
+                <h3>Alternative Formats</h3>
+                <p>If you need information from our website in an alternative format, please contact us. We will do our best to provide the information in a format that works for you.</p>
+            </div>
+
+            <div class="accessibility-section" id="physical">
+                <h2>Physical Accessibility</h2>
+                
+                <p>In addition to our digital accessibility efforts, we are committed to providing physically accessible experiences for our hot air balloon safaris.</p>
+                
+                <h3>Our Facilities</h3>
+                <ul class="accessibility-list">
+                    <li>Accessible parking spaces at our launch sites</li>
+                    <li>Level or ramped access to our reception areas</li>
+                    <li>Accessible restroom facilities</li>
+                    <li>Staff trained to assist guests with disabilities</li>
+                </ul>
+                
+                <h3>Hot Air Balloon Experience</h3>
+                <p>While hot air ballooning has certain physical requirements for safety reasons, we strive to accommodate guests with disabilities whenever possible. Please contact us in advance to discuss your specific needs and we will do our best to accommodate you.</p>
+                
+                <h3>Transportation</h3>
+                <p>We can arrange accessible transportation to and from our launch sites with advance notice. Please contact us to discuss your requirements.</p>
+            </div>
+
+            <div class="accessibility-section" id="compatibility">
+                <h2>Compatibility with Browsers and Assistive Technology</h2>
+                
+                <p>Celestial Africa's website is designed to be compatible with the following assistive technologies:</p>
+                
+                <ul class="accessibility-list">
+                    <li>Recent versions of screen readers including JAWS, NVDA, and VoiceOver</li>
+                    <li>Recent versions of major browsers including Chrome, Firefox, Safari, and Edge</li>
+                    <li>Speech recognition software such as Dragon Naturally Speaking</li>
+                    <li>Screen magnification software</li>
+                </ul>
+                
+                <p>We test our website with a combination of automated tools and manual testing to ensure compatibility.</p>
+            </div>
+
+            <div class="accessibility-section">
+                <h2>Formal Approval</h2>
+                
+                <p>This accessibility statement is approved by:</p>
+                
+                <div class="contact-point">
+                    <h4>Management Team</h4>
+                    <p>Celestial Africa Limited</p>
+                    <p>January 1, 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="section-title">Need Accessibility Assistance?</h2>
+            <p>Contact our Accessibility Coordinator for help with accessing our website or services.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Contact Us <i class="fas fa-arrow-right"></i></a>
+                <a href="experience.html" class="btn btn-outline">Learn About Our Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Celestial Africa</h3>
+                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks. Soar above the savannah and witness Africa's majestic wildlife from a unique perspective.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="experience.html"><i class="fas fa-chevron-right"></i> The Experience</a></li>
+                        <li><a href="safety.html"><i class="fas fa-chevron-right"></i> Safety</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="cookies.html"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+                        <li><a href="accessibility.html"><i class="fas fa-chevron-right"></i> Accessibility Statement</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Celestial Africa Limited. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d69e2e;"></i> for adventure seekers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Accessibility Widget -->
+    <div class="accessibility-widget" id="accessibility-widget">
+        <i class="fas fa-universal-access"></i>
+        <span>Accessibility</span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            
+            // Toggle menu icon between hamburger and close
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.remove('fa-times');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Accessibility Widget
+        document.getElementById('accessibility-widget').addEventListener('click', function() {
+            // In a real implementation, this would open an accessibility panel
+            // For this example, we'll scroll to the feedback section
+            scrollToSection('feedback');
+        });
+        
+        // Table row hover effects
+        const tableRows = document.querySelectorAll('.accessibility-table tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transition = 'background-color 0.3s ease';
+            });
+        });
+        
+        // Simple text resizing functionality
+        function changeFontSize(direction) {
+            const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+            const newSize = direction === 'increase' ? currentSize * 1.1 : currentSize * 0.9;
+            document.body.style.fontSize = newSize + 'px';
+            
+            // Save preference to localStorage
+            localStorage.setItem('fontSize', newSize);
+        }
+        
+        // Load saved font size
+        const savedFontSize = localStorage.getItem('fontSize');
+        if (savedFontSize) {
+            document.body.style.fontSize = savedFontSize + 'px';
+        }
+        
+        // High contrast mode toggle
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            
+            // Save preference to localStorage
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            localStorage.setItem('highContrast', isHighContrast);
+        }
+        
+        // Load high contrast preference
+        const highContrast = localStorage.getItem('highContrast');
+        if (highContrast === 'true') {
+            document.body.classList.add('high-contrast');
+        }
+        
+        // Add high contrast styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .high-contrast {
+                --light: #000000;
+                --light-alt: #111111;
+                --dark: #ffffff;
+                --dark-light: #eeeeee;
+                --primary: #ffff00;
+                --secondary: #00ffff;
+            }
+            
+            .high-contrast .feature-card,
+            .high-contrast .contact-point,
+            .high-contrast .important-notice {
+                background: #222222;
+                border: 2px solid #ffff00;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
