@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More | Celestial Africa Limited</title>
+    <meta name="description" content="Discover everything about Celestial Africa's hot air balloon safaris - from the experience details to safety information and booking process.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Consistent Design */
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d4a7c;
+            --secondary: #d69e2e;
+            --secondary-light: #e9b64a;
+            --accent: #742a2a;
+            --light: #f8f5e6;
+            --light-alt: #fffdf5;
+            --dark: #2d3748;
+            --dark-light: #4a5568;
+            --nav-bg: rgba(26, 54, 93, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 100px 0;
+        }
+        
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--dark-light);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-light);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:before {
+            background: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: '';
+            margin: 0;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .content-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .card-content p {
+            color: var(--dark-light);
+            margin-bottom: 20px;
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 55%;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            top: 20px;
+            right: -60px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            z-index: 10;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-icon {
+            right: auto;
+            left: -60px;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: var(--light);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            background: var(--light-alt);
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light-alt);
+            padding: 30px 0;
+        }
+        
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .nav-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .nav-item {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                left: 80px !important;
+            }
+            
+            .timeline-icon {
+                left: 5px !important;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--nav-bg);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .breadcrumb {
+                flex-direction: column;
+            }
+            
+            .breadcrumb li {
+                margin: 5px 0;
+            }
+            
+            .breadcrumb li:after {
+                content: '';
+                margin: 0;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Celestial <span>Africa</span></div>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="safety.html">Safety</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container page-header-content">
+            <h1>Learn More About Our Hot Air Balloon Safaris</h1>
+            <p>Discover the magic of floating above Africa's most spectacular landscapes and wildlife in our exclusive hot air balloon experiences.</p>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Learn More</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="quick-nav">
+        <div class="container nav-container">
+            <h3 class="nav-title">Quick Navigation</h3>
+            <div class="nav-grid">
+                <div class="nav-item" onclick="scrollToSection('experience')">The Experience</div>
+                <div class="nav-item" onclick="scrollToSection('destinations')">Destinations</div>
+                <div class="nav-item" onclick="scrollToSection('timeline')">Flight Timeline</div>
+                <div class="nav-item" onclick="scrollToSection('safety')">Safety</div>
+                <div class="nav-item" onclick="scrollToSection('faq')">FAQ</div>
+                <div class="nav-item" onclick="scrollToSection('booking')">Booking Info</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title">The Celestial Africa Experience</h2>
+            <p class="section-subtitle">A journey above the African wilderness that will stay with you forever</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sunrise balloon flight">
+                    </div>
+                    <div class="card-content">
+                        <h3>Magical Sunrise Flights</h3>
+                        <p>Experience the African dawn from a unique perspective as the sun rises over the savannah, casting golden light across the landscape and awakening the wildlife below.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Wildlife viewing from balloon">
+                    </div>
+                    <div class="card-content">
+                        <h3>Unobtrusive Wildlife Viewing</h3>
+                        <p>From our silent balloons, observe Africa's majestic animals in their natural habitat without disturbing them - elephants, giraffes, lions and more going about their daily routines.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Champagne breakfast">
+                    </div>
+                    <div class="card-content">
+                        <h3>Gourmet Bush Breakfast</h3>
+                        <p>After your flight, celebrate with a traditional champagne toast followed by a delicious gourmet breakfast served in the heart of the African bush.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="section" id="destinations" style="background: var(--light-alt);">
+        <div class="container">
+            <h2 class="section-title">Our Flight Destinations</h2>
+            <p class="section-subtitle">Experience the diverse landscapes of Uganda from a breathtaking perspective</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Queen Elizabeth National Park">
+                    </div>
+                    <div class="card-content">
+                        <h3>Queen Elizabeth National Park</h3>
+                        <p>Fly over the famous Kasenyi plains, home to large herds of Uganda kob, elephants, buffalo, and the famous tree-climbing lions of Ishasha.</p>
+                        <div class="card-features">
+                            <p><i class="fas fa-clock"></i> Flight Duration: 1 hour</p>
+                            <p><i class="fas fa-calendar"></i> Available: Year-round</p>
+                            <p><i class="fas fa-users"></i> Capacity: Up to 16 passengers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1589553416269-f37ef8f3055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Murchison Falls National Park">
+                    </div>
+                    <div class="card-content">
+                        <h3>Murchison Falls National Park</h3>
+                        <p>Witness the mighty Nile River squeezing through a narrow gorge and plunging 43 meters as you float above one of Africa's most powerful waterfalls.</p>
+                        <div class="card-features">
+                            <p><i class="fas fa-clock"></i> Flight Duration: 1 hour</p>
+                            <p><i class="fas fa-calendar"></i> Available: November-May</p>
+                            <p><i class="fas fa-users"></i> Capacity: Up to 12 passengers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1544646230-f1bf0041d0c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Private Charter">
+                    </div>
+                    <div class="card-content">
+                        <h3>Private Charters</h3>
+                        <p>For special occasions or exclusive experiences, book a private balloon for just you and your party. Perfect for proposals, anniversaries, or family celebrations.</p>
+                        <div class="card-features">
+                            <p><i class="fas fa-clock"></i> Custom Duration</p>
+                            <p><i class="fas fa-calendar"></i> Available: By arrangement</p>
+                            <p><i class="fas fa-users"></i> Capacity: 2-8 passengers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Timeline Section -->
+    <section class="section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Your Flight Day Timeline</h2>
+            <p class="section-subtitle">What to expect from start to finish on your hot air balloon adventure</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>4:30 AM - Hotel Pickup</h3>
+                        <p>Our comfortable vehicles will collect you from your accommodation and transport you to the launch site. Enjoy a hot beverage and light snack during the journey.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>5:15 AM - Arrival & Safety Briefing</h3>
+                        <p>Arrive at the launch site as dawn begins to break. Meet your pilot and crew, and receive a comprehensive safety briefing before your flight.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>5:45 AM - Balloon Inflation</h3>
+                        <p>Watch in awe as our crew prepares the balloon for flight. The inflation process is a spectacle in itself, with the balloon gradually taking shape against the morning sky.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>6:00 AM - Takeoff & Flight</h3>
+                        <p>As the sun rises, you'll gently lift off and begin your approximately one-hour flight over the African wilderness. This is when the magic truly begins.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>7:00 AM - Landing & Celebration</h3>
+                        <p>Your pilot will find a suitable landing spot where our ground crew will be waiting. After landing, participate in the traditional champagne celebration.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>7:30 AM - Bush Breakfast</h3>
+                        <p>Enjoy a full gourmet breakfast served in a beautiful bush location. Share stories of your flight experience while dining in the heart of the African wilderness.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>9:00 AM - Return to Hotel</h3>
+                        <p>After breakfast, we'll transport you back to your accommodation, arriving with plenty of time to enjoy the rest of your day.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Celestial Africa?</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-text">Years of Experience</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-text">Satisfied Passengers</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-text">Safety Record</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">5-Star</div>
+                    <div class="stat-text">TripAdvisor Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="section" id="safety">
+        <div class="container">
+            <h2 class="section-title">Your Safety Is Our Priority</h2>
+            <p class="section-subtitle">We maintain the highest safety standards to ensure your peace of mind</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-user-shield"></i> Expert Pilots</h3>
+                        <p>All our pilots are licensed by the Ugandan Civil Aviation Authority with extensive experience flying in African conditions. They undergo regular training and medical checks.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-tools"></i> Regular Maintenance</h3>
+                        <p>Our balloons and equipment undergo rigorous maintenance schedules and inspections to ensure they're always in perfect condition for your flight.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-cloud-sun"></i> Weather Monitoring</h3>
+                        <p>We continuously monitor weather conditions and will only fly when it's completely safe. If conditions aren't suitable, we'll reschedule your flight or provide a full refund.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-first-aid"></i> Comprehensive Insurance</h3>
+                        <p>We carry full public liability insurance and all our flights are covered by comprehensive aviation insurance for your complete peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="safety.html" class="btn">View Full Safety Information</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq" style="background: var(--light-alt);">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know before your flight</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I wear for the balloon flight?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend wearing comfortable, casual clothing in neutral colors (avoid bright white). Closed-toe shoes are essential as we'll be walking in grassland areas. Dress in layers as it can be cool in the early morning but warms up quickly. A hat and sunglasses are also recommended.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are there any age or health restrictions?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Children must be at least 7 years old and accompanied by an adult. There's no upper age limit as long as passengers are in good health. Unfortunately, we cannot fly anyone who is pregnant, has recently had surgery, or has serious heart or back problems. Please consult with your doctor if you have any health concerns.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if the weather is bad?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hot air ballooning is weather-dependent. If conditions aren't suitable for flying (strong winds, rain, poor visibility), we'll contact you the evening before or early on the morning of your flight to reschedule. If rescheduling isn't possible, we'll provide a full refund.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I bring my camera or phone?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We encourage you to bring cameras and phones to capture the incredible views. However, we recommend securing them with wrist straps to prevent accidental drops. Our crew can also help take photos of you with the balloon.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How many people fit in a balloon?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our balloons carry between 8 and 16 passengers plus the pilot, depending on the specific balloon and location. We never overcrowd our baskets to ensure everyone has a comfortable experience with excellent viewing opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is hot air ballooning scary?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most people find hot air ballooning to be a surprisingly gentle and peaceful experience. The balloon moves with the wind, so there's no sensation of wind or movement. The ascent and descent are very gradual. Many nervous flyers find it to be a completely different and much more relaxing experience than they expected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Info Section -->
+    <section class="section" id="booking">
+        <div class="container">
+            <h2 class="section-title">Booking Information</h2>
+            <p class="section-subtitle">How to secure your unforgettable hot air balloon experience</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-calendar-check"></i> When to Book</h3>
+                        <p>We recommend booking as far in advance as possible, especially during peak season (June-October and December-January). Last-minute bookings are sometimes available, but popular dates fill up quickly.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-money-bill-wave"></i> Payment Options</h3>
+                        <p>We accept credit cards (Visa, MasterCard), bank transfers, and cash payments. A 30% deposit is required to secure your booking, with the balance due 7 days before your flight.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-exchange-alt"></i> Cancellation Policy</h3>
+                        <p>Cancellations made more than 30 days before your flight receive a full refund. Between 15-30 days, we refund 75%. Within 14 days, refunds depend on our ability to resell the seats. Weather cancellations receive full refunds or rescheduling.</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-gift"></i> Special Occasions</h3>
+                        <p>Celebrating something special? Let us know when booking! We can arrange private balloons, special meals, champagne upgrades, and other enhancements to make your experience even more memorable.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="booking.html" class="btn">Book Your Flight Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="section-title">Ready for the Adventure of a Lifetime?</h2>
+            <p>Don't just dream about floating over the African wilderness - make it a reality with Celestial Africa.</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn">Book Your Flight <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Celestial Africa</h3>
+                    <p>Providing unforgettable hot air balloon safari experiences over Uganda's most stunning national parks. Soar above the savannah and witness Africa's majestic wildlife from a unique perspective.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="experience.html"><i class="fas fa-chevron-right"></i> The Experience</a></li>
+                        <li><a href="safety.html"><i class="fas fa-chevron-right"></i> Safety</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="cookies.html"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+                        <li><a href="accessibility.html"><i class="fas fa-chevron-right"></i> Accessibility Statement</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Celestial Africa Limited. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #d69e2e;"></i> for adventure seekers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            
+            // Toggle menu icon between hamburger and close
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.remove('fa-times');
+                document.getElementById('mobile-menu-btn').querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Add loading animation for images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+        });
+    </script>
+</body>
+</html>
